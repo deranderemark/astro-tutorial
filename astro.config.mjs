@@ -5,5 +5,5 @@ import preact from "@astrojs/preact";
 // https://astro.build/config
 export default defineConfig({
   integrations: [preact()],
-  site: 'https://marksteffes.de',
+  site: 'https://astro-tutorial.marksteffes.de',
 });
