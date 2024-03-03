@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Mark",
+  country: "Germany",
+  occupation: "Arbeitslos",
+  hobbys: ["Fotografie", "Computer", "Eierschaukeln"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "Astro", "Python", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>... and my new Astro site!</h2>
+
+  <p>
+    I am working through Astro's introductory tutorial. This is the second page
+    on my Website
+  </p>
+  <p>
+    This site will update as I complete more of the tutorial, so keep checking
+    back and see how my journey is going!
+  </p>
+
+  <p>Here are a few facts about me:</p>
+  <ul>
+    <li>Mein Name ist {identity.firstName}.</li>
+    <li>Ich lebe in {identity.country} und bin {identity.occupation}.</li>
+    {
+      identity.hobbys.length >= 2 && (
+        <li>
+          Zwei meiner Hobbys sind: {identity.hobbys[0]} und {identity.hobbys[1]}
+        </li>
+      )
+    }
+  </ul>
+
+  <p>Meine Skills sind:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+
+  {happy && <p>Ich bin glücklich, Astro zu lernen.</p>}
+  {finished && <p>Ich habe dieses Tutorial abgeschlossen!</p>}
+  {
+    goal === 3 ? (
+      <p>Mein Ziel ist es in {goal} Tagen fertig zu sein.</p>
+    ) : (
+      <p>Mein Ziel ist nicht 3.</p>
+    )
+  }
+</BaseLayout>
