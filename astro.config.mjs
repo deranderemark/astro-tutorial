@@ -6,5 +6,5 @@ import preact from "@astrojs/preact";
 export default defineConfig({
   integrations: [preact()],
   site: 'https://deranderemark.github.io/',
-  base: 'https://deranderemark.github.io/astro-tutorial',
+  base: '/astro-tutorial',
 });
